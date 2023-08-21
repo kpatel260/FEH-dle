@@ -1,0 +1,235 @@
+body {
+	background-image: url("./assets/BG_Sothis.webp");
+	background-size: cover;
+	position: "absolute";
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+h1 {
+	color: blue;
+}
+
+h2 {
+	color: red;
+}
+
+.rectangle {
+	height: 50px;
+	width: 100px;
+	background-color: #555;
+	position: relative;
+	background-color: #555;
+}
+
+.textbox {
+	background: url("./assets/textbox.png");
+	background-size: contain;
+	width: 70%;
+	height: 50px;
+}
+
+.info-box {
+	position: relative;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	width: 450px;
+	min-height: 200px;
+	background: rgb(14,16,28);
+	background: linear-gradient(0deg, rgba(14,16,28,1) 0%, rgba(0,9,99,1) 100%);
+	border-style: solid;
+	border-width: medium;
+	border-color: gold;
+	border-radius: 8px;
+}
+
+.feh-button {
+	background-image: url("./assets/feh-button.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-top: 10px;
+	width: 70%;
+	height: 70px;
+	transition: all .2s ease-in-out;
+	display: flex;
+	align-items: center;
+}
+
+.feh-button:hover{
+	transform: scale(1.1);
+}
+
+.feh-button-text{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	color: goldenrod;
+	display: inline-block;
+	position: relative;
+	margin-left: 59.415px;
+	margin-bottom: 10px;
+}
+
+.input-box {
+	background-image: url("./assets/feh-input.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-top: 10px;
+	width: 569px;
+	height: 200px;
+	scale: 0.75;
+	display: flex;
+	align-items: top;
+	justify-content: center;
+}
+
+.search-box{
+	margin-top: 45px;
+	width: 80%;
+	height: 70%;
+}
+
+.site-body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+
+input#search {
+	border: none;
+	background: transparent;
+	font-size: 32px;
+	margin-left: 40px;
+	font-family: 'Times New Roman', Times, serif;
+	width: 80%;
+	color: goldenrod;
+}
+
+::placeholder{
+	color: goldenrod;
+}
+
+input:focus{
+	outline-width: 0;
+}
+
+.answers {
+	min-height: 200px;
+	width: 800px;
+	display: flex;
+	flex-direction: column;
+}
+
+.answers-headers {
+	min-height: 50px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.header-box {
+	height: 50px;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.header-text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: goldenrod;
+	display: inline-block;
+	position: relative;
+}
+
+.header-box hr {
+	width: 70%;
+	border-left: none;
+	border-top: none;
+	border-right: none;
+	border-bottom: 3px solid goldenrod;
+}
+
+.header-box .tooltip {
+	visibility: hidden;
+	width: 100px;
+	background: rgb(14,16,28);
+	background: linear-gradient(0deg, rgba(14,16,28,1) 0%, rgba(0,9,99,1) 100%);
+	border-style: solid;
+	border-width: 2px;
+	border-color: gold;
+	border-radius: 8px;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	top: 100%;
+	left: 50%;
+	margin-top: 14px;
+	margin-left: -52px;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+.header-box:hover .tooltip{
+	visibility: visible;
+	opacity: 1;
+}
+
+.guess {
+	min-height: 100px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.guess-box-correct {
+	height: 80px;
+	width: 80px;
+	margin: auto;
+	margin-top: 0px;
+	display: flex;
+	background-color: green;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	border-style: solid;
+	border-width: medium;
+	border-color: lightgreen;
+	vertical-align: middle;
+}
+
+.guess-box-incorrect {
+	height: 80px;
+	width: 80px;
+	margin: auto;
+	margin-top: 0px;
+	display: flex;
+	background-color: red;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	border-style: solid;
+	border-width: medium;
+	border-color: lightgreen;
+	vertical-align: middle;
+}
+
+.guess-text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: white;
+	max-width: 80px;
+	vertical-align: middle;
+	margin: auto;
+}
