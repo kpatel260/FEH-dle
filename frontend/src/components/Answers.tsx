@@ -7,12 +7,12 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 interface unit {
   correctAns: String;
 }
-const inputs = ["Claude", "Dimitri", "Edelgard"];
+let inputs: string[] = ["Claude", "Dimitri", "Edelgard", "Hilda"];
 
 function Answers(props: unit) {
   const [guesses, setGuesses] = useState<string[][]>([]);
-
   function addGuess(value: string | null) {
+    inputs = inputs.filter((e, i) => e !== value);
     if (value != null) {
       const api = "http://localhost:5000/";
       let url = api + value;
@@ -21,6 +21,7 @@ function Answers(props: unit) {
         .then((response) => response.json())
         .then((data) => {
           newGuess = [
+            value,
             data.Gender,
             data.Group,
             data.Home,
@@ -41,6 +42,7 @@ function Answers(props: unit) {
     fetch(url).then((res) =>
       res.json().then((answer) => {
         setanswer([
+          props.correctAns,
           answer.Gender,
           answer.Group,
           answer.Home,
@@ -65,7 +67,6 @@ function Answers(props: unit) {
 
   return (
     <>
-      {correct ? <h1>Correct Answer!</h1> : null}
       <div className="input-box">
         <div className="search-box">
           {!correct ? (
@@ -102,6 +103,12 @@ function Answers(props: unit) {
               ></Guess>
             ))}
       </div>
+      {correct ? (
+        <h1 className="winbox" style={{ animationDelay: "2s" }}>
+          <div className="winmessage">Correct Answer!</div>
+          <div className="wintext">Number of guesses: {guesses.length}</div>
+        </h1>
+      ) : null}
     </>
   );
 }

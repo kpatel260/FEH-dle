@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function App() {
   const renderGame = () => {
-    const possAns = ["Claude", "Dimitri", "Edelgard"];
+    const possAns = ["Claude", "Dimitri", "Edelgard", "Hilda"];
     let randAns = possAns[Math.floor(Math.random() * possAns.length)];
     return <Answers correctAns={randAns} />;
   };
@@ -13,9 +13,6 @@ function App() {
     <>
       <div className="site-body">
         <div className="info-box">
-          <div className="feh-button"></div>
-          <div className="feh-button"></div>
-          <div className="feh-button"></div>
           <div className="feh-button" onClick={() => window.location.reload()}>
             <div className="feh-button-text">RESET GAME</div>
           </div>

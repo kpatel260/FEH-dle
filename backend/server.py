@@ -2,16 +2,22 @@ from flask import Flask
 from flask import jsonify
 from flaskext.mysql import MySQL
 import datetime
+import json
 
 x = datetime.datetime.now()
 db = MySQL()
 
 app = Flask(__name__)
 
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = ''
-app.config['MYSQL_DATABASE_DB'] = 'feth'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+with open('cred.txt') as f:
+    data = f.read()
+
+creds = json.loads(data)
+
+app.config['MYSQL_DATABASE_USER'] = creds['DB_USER']
+app.config['MYSQL_DATABASE_PASSWORD'] = creds['DB_PASS']
+app.config['MYSQL_DATABASE_DB'] = creds['DB_TABLE']
+app.config['MYSQL_DATABASE_HOST'] = creds['DB_HOST']
 db.init_app(app)
 
 conn = db.connect()
@@ -29,6 +35,7 @@ def retrieve_char_data(name):
         'Movement': data[4],
         'Weapon': data[5],
         'Crest': data[6],
+        
     })
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response

@@ -1,11 +1,23 @@
+html{
+	background-image: url("./assets/bg_art.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: black;
+	background-attachment: fixed;
+	width: 100%;
+	
+}
+
 body {
-	background-image: url("./assets/BG_Sothis.webp");
+	background-image: url("./assets/bg_art.jpg") no-repeat 50% fixed;
 	background-size: cover;
 	position: "absolute";
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
+	width: '100vw';
+	height: '100vh';
 }
 
 h1 {
@@ -37,7 +49,7 @@ h2 {
 	display: flex;
 	flex-direction: column;
 	width: 450px;
-	min-height: 200px;
+	
 	background: rgb(14,16,28);
 	background: linear-gradient(0deg, rgba(14,16,28,1) 0%, rgba(0,9,99,1) 100%);
 	border-style: solid;
@@ -108,6 +120,37 @@ input#search {
 	font-family: 'Times New Roman', Times, serif;
 	width: 80%;
 	color: goldenrod;
+}
+
+.winbox {
+	animation: fadeIn 3.5s;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	position: relative;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	width: 450px;
+	color: goldenrod;
+	background: rgb(14,16,28);
+	background: linear-gradient(0deg, rgba(14,16,28,1) 0%, rgba(0,9,99,1) 100%);
+	border-style: solid;
+	border-width: medium;
+	border-color: gold;
+	border-radius: 8px;
+}
+
+.winmessage {
+	margin-top: 5%;
+	font-size: 35px;
+	color: goldenrod;
+}
+
+.wintext {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	font-size: 20px;
+	color: white;
 }
 
 ::placeholder{
@@ -193,6 +236,23 @@ input:focus{
 	align-items: center;
 }
 
+.guess-box {
+	height: 100px;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	opacity: 0;
+	animation: fadeIn 1.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
 .guess-box-correct {
 	height: 80px;
 	width: 80px;
@@ -204,9 +264,11 @@ input:focus{
 	flex-direction: column;
 	align-items: center;
 	border-style: solid;
-	border-width: medium;
-	border-color: lightgreen;
+	border-width: thin;
+	border-color: white;
 	vertical-align: middle;
+	margin-left: 9px;
+	margin-right: 9px;
 }
 
 .guess-box-incorrect {
@@ -215,14 +277,16 @@ input:focus{
 	margin: auto;
 	margin-top: 0px;
 	display: flex;
-	background-color: red;
+	background-color: darkred;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
 	border-style: solid;
-	border-width: medium;
-	border-color: lightgreen;
+	border-width: thin;
+	border-color: white;
 	vertical-align: middle;
+	margin-left: 9px;
+	margin-right: 9px;
 }
 
 .guess-text {
@@ -231,5 +295,6 @@ input:focus{
 	color: white;
 	max-width: 80px;
 	vertical-align: middle;
+	text-align: center;
 	margin: auto;
 }
